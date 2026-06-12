@@ -17,7 +17,7 @@ Nuestro proyecto es desarrollar un software para la gestion de un gimnasio, perm
 
 ### Modelo
 
-[Imagen Modelo Dominio](https://drive.google.com/file/d/1f-kPnDfZ-psf7Gbo-C4_mpzHvLksYkXz/view?usp=drive_link)
+[Diagrama Entidad-Relacion](https://drive.google.com/file/d/1QYu9QZpMjx15KOmOkGyAGqJT4m06Hd4r/view?usp=sharing)
 
 
 ## Alcance Funcional 
