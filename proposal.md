@@ -36,7 +36,7 @@ Regularidad:
 Adicionales para Aprobación
 |Req|Detalle|
 |:-|:-|
-|CRUD |1. CRUD Usuario<br>2. CRUD Sede<br>3. CRUD Actividad<br>4. CRUD Rutina<br>5. CRUD Cuota<br>6. CRUD Reserva<br>7. CRUD Turno|
+|CRUD |1. CRUD Usuario<br>2. CRUD Sede<br>3. CRUD Actividad<br>>4. CRUD Cuota<br>5. CRUD Reserva<br>6. CRUD Turno|
 |CUU/Epic|1. Calcular precio de cuota a un usuaro<br>2. Generar link de pago para la cuota<br>3. Actualizar el estado del usuario|
 
 
