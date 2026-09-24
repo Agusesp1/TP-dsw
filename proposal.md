@@ -27,7 +27,7 @@ Nuestro proyecto es desarrollar un software para la gestion de un gimnasio, perm
 Regularidad:
 |Req|Detalle|
 |:-|:-|
-|CRUD simple|1. CRUD Usuario<br>2. CRUD Sede<br>3. CRUD Actividad<br>4. CRUD Rutina|
+|CRUD simple|1. CRUD Usuario<br>2. CRUD Sede<br>3. CRUD Actividad<br>4. CRUD Turnos|
 |CRUD dependiente|1. CRUD Rutina {depende de} CRUD Socio<br>2. CRUD Sede {depende de} CRUD Encargado|
 |Listado<br>+<br>detalle| 1. Listado filtrado de socios segun su estado, muestra documento, nombre y vencimiento de la cuota<br> 2. Listado de profes filtrados por sede, muestra nombre, id, especialidad|
 |CUU/Epic|1. Calcular precio de cuota a un usuaro<br>2. Generar link de pago para la cuota|
