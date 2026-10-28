@@ -3,8 +3,8 @@
 ## Grupo
 ### Integrantes
 * 54890 - Anduaga, Morena
-* 52221 - España, Agustin
-* 54451 - Valvasoni, Maximo
+* 52221 - España, Agustín
+* 54451 - Valvasoni, Máximo
 * 53073 - Zuliani, Ignacio
 
 ### Repositorios
@@ -13,7 +13,7 @@
 
 ## Tema
 ### Descripción
-Nuestro proyecto es desarrollar un software para la gestion de un gimnasio, permitiendo tener usuarios diferenciados(socios, profesores y encargados) los cuales van a poder interactuar con el sistema, pudiendo asistir al gimnasio por turno, administrado por el sistema, asignar rutinas a los socios, gestionar las cuotas y verificar su vencimiento, como asi tambien controlar cada usuario de una sede siendo encargado y permitiendole ver estadisticas y datos de la misma.
+Nuestro proyecto es desarrollar un software para la gestión de un gimnasio, permitiendo tener usuarios diferenciados (socios, profesores y encargados/administradores) los cuales van a poder interactuar con el sistema, pudiendo asistir al gimnasio por turno administrado por el sistema, gestionar las cuotas y verificar su vencimiento, como así también controlar cada entidad de una sede siendo encargado y permitiéndole ver estadísticas y datos de la misma.
 
 ### Modelo
 
@@ -29,24 +29,21 @@ Regularidad:
 |:-|:-|
 |CRUD simple|1. CRUD Usuario<br>2. CRUD Sede<br>3. CRUD Actividad<br>4. CRUD Turnos|
 |CRUD dependiente|1. CRUD Rutina {depende de} CRUD Socio<br>2. CRUD Sede {depende de} CRUD Usuario(Administrador)|
-|Listado<br>+<br>detalle| 1. Listado filtrado de socios segun su estado, muestra documento, nombre y vencimiento de la cuota<br> 2. Listado de profes filtrados por sede, muestra nombre, id, especialidad|
-|CUU/Epic|1. Calcular precio de cuota a un usuaro<br>2. Generar link de pago para la cuota|
+|Listado<br>+<br>detalle| 1. Listado clientes mostrando documento, nombre, correo, membresía, estado cuenta y vencimiento de la cuota (filtros según membresía o estado)<br> 2. Listado de profesores, muestra nombre, dni, especialidad, turno, contacto, sede asignada y estado cuenta|
+|CUU/Epic|1. Calcular precio de cuota a un usuario<br>2. Generar link de pago para la cuota|
 
 
 Adicionales para Aprobación
 |Req|Detalle|
 |:-|:-|
-|CRUD |1. CRUD Usuario<br>2. CRUD Sede<br>3. CRUD Actividad<br>>4. CRUD Cuota<br>5. CRUD Reserva<br>6. CRUD Turno|
-|CUU/Epic|1. Calcular precio de cuota a un usuaro<br>2. Generar link de pago para la cuota<br>3. Actualizar el estado del usuario|
+|CRUD |1. CRUD Usuario<br>2. CRUD Sede<br>3. CRUD Actividad<br>4. CRUD Cuota<br>5. CRUD Reserva<br>6. CRUD Turno<br>7. CRUD Profesor<br>8. CRUD Precios de Cuota (Tarifas programadas)|
+|CUU/Epic|1. Calcular precio de cuota a un usuario (según categoría de membresía y tarifas vigentes)<br>2. Generar link de pago para la cuota (integración con Mercado Pago)<br>3. Actualizar el estado del usuario (automático según regularidad de deuda y manual administrativo)<br>4. Registrar y confirmar pago de cuota online (vía Webhooks de Mercado Pago)<br>5. Registrar cobro y pago manual de cuota en caja (con emisión de comprobante)|
 
 
 ### Alcance Adicional Voluntario
 
-
 |Req|Detalle|
 |:-|:-|
-|Listados |1. Listado de rutinas para un profesor<br>|
-|CUU/Epic|1.Asignar rutina a socio<br>2. Reservar  un turno<br>3. Generacion automatica de cuotas|
-|Otros|1.Autenticacion mediante token<br> 2. Envio de mail para recuperar contraseña<br>3. Formulario de contacto|
-
-
+|Listados |1. Listado de sedes con información de contacto, horarios y capacidad<br>2. Listado de actividades mostrando Nombre, Días y Horarios, Sede Asignada, Profesor a Cargo, Duración, Cupo Máximo, Turnos Creados, Estado (filtros por sedes o profesor)<br>3. Listado de turnos/clases disponibles para reserva (vista para el socio con filtros por sede, fecha y cálculo de cupos disponibles en tiempo real)<br>4. Listado de "Mis Reservas" del socio (detalle de reservas activas con opción de cancelación)<br>5. Listado e historial de cuotas del socio (seguimiento de cuotas pendientes, demoradas o pagadas y descarga/visualización de recibos)<br>6. Listado general de cuotas y cobranzas de socios para administración (filtros por estado de cuota "Al Día", "Demorado", "Con Deuda", buscador y panel de resumen)<br>7. Listado de tarifas programadas e históricas de cuotas con fecha de vigencia<br>8. Listado de agenda de turnos y clases asignadas para el profesor<br>9. Panel de estadísticas generales del gimnasio (total de socios, profesores activos, sedes, actividades y turnos)|
+|CUU/Epic|1. Asignar rutina a socio<br>2. Reservar un turno (con validación de cupo máximo, verificación de cuota al día y prevención de solapamientos)<br>3. Cancelar reserva de turno (liberación inmediata de cupo)<br>4. Generación automática de cuotas mensuales (evaluando fecha de ingreso, período, categoría de socio y tarifas vigentes)<br>5. Programación de actualización de precios futuros de cuotas|
+|Otros|1. Autenticación mediante token JWT<br>2. Envío de mail para recuperar contraseña<br>3. Autenticación en dos pasos (2FA) mediante código de 6 dígitos enviado por email<br>4. Verificación de correo electrónico de cuenta de usuario<br>5. Formulario de contacto con envío de correo electrónico institucional<br>6. Botón interactivo de contacto directo por WhatsApp<br>7. Emisión y visualización de comprobantes y recibos digitales de pago<br>8. Encriptación segura de contraseñas con salteo (bcrypt)|
